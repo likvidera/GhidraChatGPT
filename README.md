@@ -40,7 +40,7 @@ Attempts to identify the purpose of the current function and potential open sour
 Attempts to discover all potential vulnerabilities in the current function with the help of ChatGPT. The response from ChatGPT will be added as a comment above the function.
 
 **Beautify Function** (Tools > GhidraChatGPT > Beautify Function)  
-Attempts to beautify the current function with the help of ChatGPT.
+Attempts to beautify the current function by identifying and applying more meaningful variable and function names with the help of ChatGPT.
 
 ### Settings
 **Update OpenAI Token** (Tools > GhidraChatGPT > Settings > Update OpenAI Token)  

@@ -81,6 +81,7 @@ public class GhidraChatGPTComponent extends ComponentProvider {
         action.setEnabled(true);
         action.setDescription("Identify the function with the help of ChatGPT");
         action.setMenuBarData(new MenuData(new String[] { ToolConstants.MENU_TOOLS, FUNCTION_ID_NAME, "Identify Function" }));
+        action.setKeyBindingData(new KeyBindingData(KeyEvent.VK_I, InputEvent.SHIFT_DOWN_MASK | InputEvent.ALT_DOWN_MASK | InputEvent.CTRL_DOWN_MASK));
         dockingTool.addAction(action);
 
         // Find vulnerabilities
@@ -96,6 +97,7 @@ public class GhidraChatGPTComponent extends ComponentProvider {
         action.setEnabled(true);
         action.setDescription("Find vulnerabilities in the function with the help of ChatGPT");
         action.setMenuBarData(new MenuData(new String[] { ToolConstants.MENU_TOOLS, FUNCTION_ID_NAME, "Find Vulnerabilities" }));
+        action.setKeyBindingData(new KeyBindingData(KeyEvent.VK_V, InputEvent.SHIFT_DOWN_MASK | InputEvent.ALT_DOWN_MASK | InputEvent.CTRL_DOWN_MASK));
         dockingTool.addAction(action);
 
         // Beautify function
@@ -111,6 +113,7 @@ public class GhidraChatGPTComponent extends ComponentProvider {
         action.setEnabled(true);
         action.setDescription("Beautify the function with the help of ChatGPT");
         action.setMenuBarData(new MenuData(new String[] { ToolConstants.MENU_TOOLS, FUNCTION_ID_NAME, "Beautify Function" }));
+        action.setKeyBindingData(new KeyBindingData(KeyEvent.VK_B, InputEvent.SHIFT_DOWN_MASK | InputEvent.ALT_DOWN_MASK | InputEvent.CTRL_DOWN_MASK));
         dockingTool.addAction(action);
 
         // Update OpenAI Token
