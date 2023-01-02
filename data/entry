@@ -1,0 +1,10 @@
+#! /bin/bash
+
+set -e
+
+"/gradle-${GRADLE_VERSION}/bin/gradle"
+
+APPNAME=$(ls dist/*.zip | xargs basename)
+cp dist/*.zip "${GHIDRA_INSTALL_DIR}/Extensions/Ghidra"
+
+echo "[+] Built $APPNAME and copied it to YOUR_GHIDRA_INSTALL/Extensions/Ghidra/$APPNAME"
