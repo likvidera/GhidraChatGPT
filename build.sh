@@ -2,7 +2,7 @@
 
 set -e
 
-VERSION=10.2.3
+VERSION=10.3.3
 GID=$(id -g)
 DOCKER_GHIDRA_IMG="ghidra-chatgpt:$VERSION"
 DOCKER_BUILD=0
@@ -31,6 +31,12 @@ function docker_build() {
     --entrypoint /entry "$DOCKER_GHIDRA_IMG"
 }
 
+function clean() {
+    rm -rf ghidrachatgpt/build || true
+    rm -rf ghidrachatgpt/dist || true
+    rm -rf ghidrachatgpt/lib || true
+}
+
 function build() {
     echo "[+] Building the GhidraChatGPT Plugin" >&2
 
@@ -47,12 +53,13 @@ function build() {
 function usage() {
     echo "Usage: $0 [OPTION...] [CMD]" >&2
     echo "  -p PATH        PATH to local Ghidra installation" >&2
+    echo "  -c             Clean" >&2
     echo "  -d             Build with Docker" >&2
     echo "  -f             Force rebuild of the Docker image" >&2
     echo "  -h             Show this help" >&2
 }
 
-while getopts "p:dfh" opt; do
+while getopts "p:cdfh" opt; do
     case "$opt" in
         p)
             GHIDRA_PATH=$(realpath ${OPTARG})
@@ -62,6 +69,10 @@ while getopts "p:dfh" opt; do
             ;;
         f)
             FORCE_BUILD=1
+            ;;
+        c) 
+            clean
+            exit 0
             ;;
         h)
             usage
