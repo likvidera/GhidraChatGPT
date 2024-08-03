@@ -2,7 +2,7 @@
 
 set -e
 
-VERSION=11.1.2
+VERSION=11.1.3
 GID=$(id -g)
 DOCKER_GHIDRA_IMG="ghidra-chatgpt:$VERSION"
 DOCKER_BUILD=0
